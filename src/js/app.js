@@ -1,23 +1,11 @@
-define(['underscore', 'backbone', 'jquery'], function(_, Backbone, $) {
+define(['underscore', 'backbone', 'jquery', 'userview', 'user'], function(_, Backbone, $, UserView, User) {
 
-    var UserView = Backbone.View.extend({
-            tagName: 'li',
+    var users = new User.UserCollection();
 
+    users.fetch();
+    console.log(users);
 
-
-            initialize: function() {
-                // this.listenTo(this.model, 'change', this.render);
-                // this.listenTo(this.model, 'destroy', this.remove)
-            },
-
-            render: function() {
-                this.$el.html('hello world');
-            return this;
-        }
-
-    });
-
-    var userview = new UserView();
+    var userview = new UserView({model: users});
 
     $('#container').html(userview.render().$el);
 });
