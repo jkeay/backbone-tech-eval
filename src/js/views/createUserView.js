@@ -51,7 +51,7 @@ define(['jquery', 'underscore', 'backbone', 'usercollection'], function($, _, Ba
 				this.nameFeedback.addClass('hidden');
 			}
 
-			if (!reg.test(input.phoneNumber)) {
+			if (!reg.test(input.phoneNumber) && input.phoneNumber != "") {
 				this.phonenumberField.addClass('invalid-input');
 				this.phonenumberFeedback.removeClass('hidden');
 				valid = false;
