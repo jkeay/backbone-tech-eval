@@ -1,0 +1,27 @@
+.x-create-user-btn {
+	position: absolute;
+	top: 30px;
+	right: 10px;
+}
+
+.x-users-container {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.x-create-user-container {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	padding-top: 200px;
+	background-color: rgba(0, 0, 0 , 0.5);
+}
+
+.x-create-user-form {
+	box-shadow: 0px 0px 15px !important;
+}
