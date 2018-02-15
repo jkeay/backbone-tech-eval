@@ -5,6 +5,7 @@ requirejs.config({
         underscore: 'lib/underscore-min',
         backbone: 'lib/backbone-min',
         userview: 'views/user-view',
+        adduserview: 'views/add-user-view',
         user: 'models/user',
         firebase: 'lib/firebase',
         backbonefire: 'lib/backbonefire'

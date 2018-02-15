@@ -1,11 +1,18 @@
-define(['underscore', 'backbone', 'jquery', 'userview', 'user'], function(_, Backbone, $, UserView, User) {
+define(['underscore', 'backbone', 'jquery', 'userview','adduserview', 'user'], function(_, Backbone, $, UserGroupView, AddUserView, User) {
 
     var users = new User.UserCollection();
+    users.on('all',function(event){
+      console.log(event);
+    });
 
     users.fetch();
     console.log(users);
 
-    var userview = new UserView({model: users});
+    var userviews = new UserGroupView({model: users});
 
-    $('#container').html(userview.render().$el);
+    var addUserView = new AddUserView({model: users});
+
+    $('#container').html(userviews.render().$el);
+
+    $('#container').append(addUserView.render().$el);
 });

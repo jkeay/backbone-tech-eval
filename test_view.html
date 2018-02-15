@@ -6,8 +6,29 @@
     <title>Tech Eval: Backbone</title>
     <script src="js/lib/modernizr-2.6.2.min.js"></script>
     <script data-main="src/js/main" src="src/js/require.js"></script>
-        
-    </main>"
+ <script id="userTemplate" type="text/html">
+    name: <%= name %><br>
+    phone: <%=phonenumber %>
+    <button id="remove-user">Remove User</button>
+ </script>
+
+<script id="addUserTemplate" type="text/html">
+
+  <div id='additem'>
+    name:
+    <input id='get-name' type='text' /> <br>
+    phone:
+    <input id='get-phone' type='text' /><br>
+    username:
+     <input id='get-uname' type='text' />
+    <button id="add-user">Add User</button>
+  </div>
+</script>
+
+ <script id="usersTemplate" type="text/html">
+    <div id="user-container"></div>
+ </script>
+ 
 </head>
 
 <body>
