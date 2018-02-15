@@ -4,6 +4,9 @@ define(['jquery', 'underscore', 'backbone', 'usercollection'], function($, _, Ba
 			this.usernameField = this.$('input[name="username"]');
 			this.nameField = this.$('input[name="name"]');
 			this.phonenumberField = this.$('input[name="phonenumber"]');
+			this.usernameFeedback = this.$('.x-username-feedback');
+			this.nameFeedback = this.$('.x-name-feedback');
+			this.phonenumberFeedback = this.$('.x-phonenumber-feedback');
 		},
 		el: $('.x-create-user-container'),
 		events: {
@@ -27,17 +30,37 @@ define(['jquery', 'underscore', 'backbone', 'usercollection'], function($, _, Ba
 			}
 		},
 		isValidForm: function(input) {
+			var reg = new RegExp('^[0-9]+$');
+			var valid = true;
+
 			if(input.userName == "") {
-				alert("Username is required");
-				return false;
-			} else if(input.name == "") {
-				alert("Name is required");
-				return false;
+				this.usernameField.addClass('invalid-input');
+				this.usernameFeedback.removeClass('hidden');
+				valid = false;
+			} else {
+				this.usernameField.removeClass('invalid-input');
+				this.usernameFeedback.addClass('hidden');
 			}
 
-			//TODO: validate phonenumbers to only contain numbers
+			if(input.name == "") {
+				this.nameField.addClass('invalid-input');
+				this.nameFeedback.removeClass('hidden');
+				valid = false;
+			} else {
+				this.nameField.removeClass('invalid-input');
+				this.nameFeedback.addClass('hidden');
+			}
 
-			return true;
+			if (!reg.test(input.phoneNumber)) {
+				this.phonenumberField.addClass('invalid-input');
+				this.phonenumberFeedback.removeClass('hidden');
+				valid = false;
+			} else {
+				this.phonenumberField.removeClass('invalid-input');
+				this.phonenumberFeedback.addClass('hidden');
+			}
+
+			return valid;
 		},
 		toggleVisibility: function() {
 			this.$el.toggleClass('hidden');
@@ -47,6 +70,12 @@ define(['jquery', 'underscore', 'backbone', 'usercollection'], function($, _, Ba
 			this.usernameField.val("");
 			this.nameField.val("");
 			this.phonenumberField.val("");
+			this.usernameField.removeClass('invalid-input');
+			this.nameField.removeClass('invalid-input');
+			this.phonenumberField.removeClass('invalid-input');
+			this.usernameFeedback.addClass('hidden');
+			this.nameFeedback.addClass('hidden');
+			this.phonenumberFeedback.addClass('hidden');
 		}
 	});
 

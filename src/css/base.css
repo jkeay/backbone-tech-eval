@@ -9,8 +9,8 @@ header {
 }
 
 nav {
-	position: absolute;
-	top: 35px;
+	position: absolute !important;
+	top: 35px !important;
 }
 
 section {
@@ -55,6 +55,28 @@ tbody {
 	margin-left: 10px;
 }
 
+.navbar-nav {
+	float: left !important;
+    margin: 0 !important;
+}
+
+.navbar-nav > li {
+	float: left !important;
+}
+
+.navbar-nav > li > a {
+	padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
 .hidden {
 	display: none;
+}
+
+.invalid-feedback {
+	color: #f77;
+}
+
+.invalid-input {
+	border-color: #f77 !important;
 }
