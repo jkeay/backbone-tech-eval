@@ -28,7 +28,7 @@ define(['jquery', 'underscore', 'backbone', 'usermodel', 'usercollection', 'crea
         	var button = event.currentTarget;
 			var model = this.collection.get(button.id);
         	model.destroy();
-        	this.render();
+        	this.collection.trigger('sync');
         },
         openCreateUserView: function() {
         	this.createUserView.toggleVisibility();
