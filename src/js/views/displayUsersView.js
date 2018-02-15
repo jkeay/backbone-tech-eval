@@ -18,7 +18,13 @@ define(['jquery', 'underscore', 'backbone', 'usermodel', 'usercollection', 'crea
 
 			var userHtml = '';
 			this.collection.each(function(model) {
-				userHtml += template(model.toJSON());
+				var json = model.toJSON();
+
+				if(json.phonenumber == '') {
+					json.phonenumber = '-';
+				}
+
+				userHtml += template(json);
 			})
 
 			this.tableBody.html(userHtml);
