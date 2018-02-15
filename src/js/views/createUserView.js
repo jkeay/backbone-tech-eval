@@ -17,18 +17,14 @@ var CreateUserView = Backbone.View.extend({
 		var inputName = this.nameField.val();
 		var inputPhonenumber = this.phonenumberField.val();
 
-		user = new UserModel({
+		var user = this.userCollection.create({
 			username: inputUserName,
 			name: inputName,
 			phonenumber: inputPhonenumber
 		});
-
-		this.userCollection.add(user);
-		console.log(this.userCollection);
 	}
 });
 
 $(document).ready(function() {
 	var createView = new CreateUserView({el: $('.x-create-user-form')});
-	console.log(createView);
 });
