@@ -1,9 +1,9 @@
-// User Model Class
-var UserModel = Backbone.Model.extend({
-	defaults: {
-		id: 0,
-		username: '',
-		name: '',
-		phonenumber: ''
-	}
+define(['underscore', 'backbone'], function(_, Backbone) {
+	return Backbone.Model.extend({
+		defaults: {
+      		name: '',
+      		phonenumber: 0,
+      		username: ''
+    	}
+  	});
 });
