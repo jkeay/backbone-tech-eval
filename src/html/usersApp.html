@@ -10,8 +10,8 @@
     </head>
     <body>
         <header>
-            <h1>Demo:</h1>
-            <h2>Users</h2>
+            <img class="x-backbone-thumbnail" src="../images/backbone_logo.png" alt="The logo for backbone.js"/>
+            <h1>Users</h1>
         </header>
         <nav class="navbar navbar-default">
             <ul class="nav navbar-nav">
@@ -20,23 +20,29 @@
             </ul>
         </nav>
         <section>
-            <div class="x-users-container container-fluid well">
+            <div class="x-users-container container-fluid">
                 <div class="x-user-header">
                     <h2>Users</h2>
                     <button type="button" class="btn btn-primary x-create-user-btn">Create User</button>
                 </div>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Name</th>
-                            <th>Phone Number</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="x-user-table-body"></tbody>
-                </table>
+                <div class="x-table-container well">
+                    <table class="table">
+                        <thead class="x-table-header">
+                            <tr>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="x-user-table-body"></tbody>
+                    </table>
+                </div>
+
+                <button class="x-demo-control-btn">
+                    <span>DEMO</span>
+                </button>
             </div>
 
             <div class="x-create-user-container hidden">

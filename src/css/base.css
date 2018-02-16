@@ -11,6 +11,8 @@ header {
 nav {
 	position: absolute !important;
 	top: 35px !important;
+	left: 0px;
+	right: 0px;
 }
 
 section {
@@ -40,11 +42,6 @@ header > h2 {
 form > h2 {
 	margin: 10px 0px;
 	font-weight: bold;
-}
-
-tbody {
-	height: 500px;
-	overflow: auto;
 }
 
 .margin-right {
@@ -79,4 +76,33 @@ tbody {
 
 .invalid-input {
 	border-color: #f77 !important;
+}
+
+.x-backbone-container {
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.x-backbone-thumbnail {
+	width: 25px;
+	margin: 5px 10px;
+	float: left;
+}
+
+.x-backbone-logo {
+	width: 50px;
+	float: left;
+}
+
+.x-backbone-title {
+	display: inline-block;
+	font-size: 50px;
+	margin: 0px;
+}
+
+.x-backbone-subtitle {
+	position: absolute;
+	top: 60px;
+	padding-left: 52px;
+	font-size: 16px;
 }

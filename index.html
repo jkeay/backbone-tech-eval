@@ -10,19 +10,26 @@
     </head>
     <body>
         <header>
+            <img class="x-backbone-thumbnail" src="src/images/backbone_logo.png" alt="The logo for backbone.js"/>
             <h1>JayJaeMark</h1>
         </header>
         <nav class="navbar navbar-default">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="src/html/usersApp.html">Users Demo</a></li>
             </ul>
         </nav>
         <section>
+            <div class="x-backbone-container container">
+                <img class="x-backbone-logo" src="src/images/backbone_logo.png" alt="The logo for backbone.js"/>
+                <h2 class="x-backbone-title">BACKBONE.JS</h2>
+                <h3 class="x-backbone-subtitle">TECH EVALUATION</h3>
+            </div>
             <div class="container well">
                 <h2>What is backbone.js?</h2>
                 <p>
                     Backbone is a widely used node.js package providing separation of business logic, server/client logic, and the displaying of information.
+                    Visit <a href="http://backbonejs.org/">backbone.js</a> for full documentation on backbone.js.
                     The main features of backbone driving webapps includes:
                 </p>
                 <ul>
@@ -64,6 +71,18 @@
                     <li>POP: removes and returns the model at the end of the collection</li>
                     <li>SLICE: adds a model to the front of the collection</li>
                     <li>SHIFT: removes and returns the model at the front of the collection</li>
+                </ul>
+            </div>
+            <div class="container well">
+                <h2>Views</h2>
+                <p>
+                    Views render the content of a page and allow for template-based workflows. A view contains a main element holding sub-elements that are interacted with.
+                    The view responds to DOM events and has its own event handler that calls interal methods.
+                </p>
+                <h3>Main Methods</h3>
+                <ul>
+                    <li>INITIALIZE: the constructor for a view, which is called before any other method</li>
+                    <li>RENDER: a method called whenever the view updates any information</li>
                 </ul>
             </div>
         </section>
