@@ -32,10 +32,17 @@ define(['jquery', 'underscore', 'backbone', 'usercollection'], function($, _, Ba
 		isValidForm: function(input) {
 			var reg = new RegExp('^[0-9]+$');
 			var valid = true;
+			var userNameTaken = this.collection.where({username: input.userName}).length > 0;
 
 			if(input.userName == "") {
 				this.usernameField.addClass('invalid-input');
 				this.usernameFeedback.removeClass('hidden');
+				this.usernameFeedback.html("Username required");
+				valid = false;
+			} else if(userNameTaken) {
+				this.usernameField.addClass('invalid-input');
+				this.usernameFeedback.removeClass('hidden');
+				this.usernameFeedback.html("Username already taken");
 				valid = false;
 			} else {
 				this.usernameField.removeClass('invalid-input');
